@@ -3677,7 +3677,7 @@ u32 hugetlb_fault_mutex_hash(struct hstate *h, struct mm_struct *mm,
 			    struct address_space *mapping,
 			    pgoff_t idx, unsigned long address)
 {
-	unsigned long key[2];
+	unsigned int key[2];
 	u32 hash;
 
 	if (vma->vm_flags & VM_SHARED) {
