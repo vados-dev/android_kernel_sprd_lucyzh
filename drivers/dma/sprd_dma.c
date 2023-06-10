@@ -1676,7 +1676,7 @@ static int sprd_dma_probe(struct platform_device *pdev)
 		return -ENODEV;
 	}
 
-	dma_type = (enum sprd_dma_controller_type)lock_of_id->data;
+	dma_type = (enum sprd_dma_controller_type)(long)lock_of_id->data;
 
 	if (of_property_read_u32(pdev->dev.of_node, "#dma-channels",
 				 &dma_chn_cnt)) {
