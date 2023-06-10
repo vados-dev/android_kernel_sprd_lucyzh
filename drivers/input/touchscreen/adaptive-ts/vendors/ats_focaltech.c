@@ -369,7 +369,7 @@ static enum ts_result focaltech_handle_event(
 	struct focaltech_controller *ftc = to_focaltech_controller(c);
 	unsigned char val = 0, a3 = 0, a8 = 0;
 	struct device_node *pn = NULL;
-	enum ts_event ret = TSRESULT_EVENT_HANDLED;
+	enum ts_event ret = (enum ts_event) TSRESULT_EVENT_HANDLED;
 
 	switch (event) {
 	case TSEVENT_POWER_ON:
@@ -385,7 +385,7 @@ static enum ts_result focaltech_handle_event(
 		if ((ts_reg_read(REG_CHIP_ID, &a3, 1) != 1)
 			|| (ts_reg_read(REG_MODULE_ID, &a8, 1) != 1)
 			|| (a3 != ftc->a3))
-			ret = TSRESULT_EVENT_NOT_HANDLED;
+			ret = (enum ts_event) TSRESULT_EVENT_NOT_HANDLED;
 		TS_DBG("read a8 value from chip: 0x%02X", a8);
 		break;
 	case TSEVENT_SUSPEND:
@@ -410,7 +410,7 @@ static enum ts_result focaltech_handle_event(
 		break;
 	}
 
-	return ret;
+	return (enum ts_result) ret;
 }
 
 static const unsigned short focaltech_addrs[] = { 0x38 };
