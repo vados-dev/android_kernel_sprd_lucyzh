@@ -2453,9 +2453,9 @@ int mmc_attach_mmc(struct mmc_host *host)
 	 * Detect and init the card.
 	 */
 	err = mmc_init_card(host, rocr, NULL);
-	if (err)
+	if (err) {
 		goto err;
-
+	}
 		/*[ECID:000000] ZTEBSP wangxiaomei record eMMC info into /proc/driver/emmc file, 20131108, begin*/
 		if (false == emmc_proc_init) {
 			init_emmc_id_proc(host);
