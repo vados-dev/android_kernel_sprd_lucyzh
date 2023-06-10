@@ -1906,7 +1906,7 @@ static int sprdfgu_2723_probe(struct platform_device *pdev)
 		pr_err("get 27xx fgu of device id failed!\n");
 		return -ENODEV;
 	}
-	sprdfgu_data.fgu_pdata->fgu_type = (enum fgu_type)of_id->data;
+	sprdfgu_data.fgu_pdata->fgu_type = (enum fgu_type)(long)of_id->data;
 	SPRD_FGU_DEBUG("fgu_type =%d\n",
 		sprdfgu_data.fgu_pdata->fgu_type);
 
