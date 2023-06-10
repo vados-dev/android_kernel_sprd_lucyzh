@@ -1848,7 +1848,7 @@ static int sprd_cpufreqhw_probe(struct platform_device *pdev)
 
 	atomic_set(&cpufreqhw_suspend, 0);
 	cpufreqhw->probed = false;
-	cpufreqhw->type = (enum sprd_cpufreqhw_type)of_id->data;
+	cpufreqhw->type = (enum sprd_cpufreqhw_type)(long)of_id->data;
 	cpufreqhw->aon_apb_base = aon_apb_base;
 	cpufreqhw->anlg_phy_g4_ctrl = anlg_phy_g4_ctrl_base;
 
