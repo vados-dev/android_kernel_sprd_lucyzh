@@ -1528,7 +1528,7 @@ static int sprd_pmic_adc_probe(struct platform_device *pdev)
 		dev_err(&pdev->dev, "Get the adc of device id failed!\n");
 		return -ENODEV;
 	}
-	adc_type = (enum sprd_pmic_adc_type)of_id->data;
+	adc_type = (enum sprd_pmic_adc_type)(long)of_id->data;
 	indio_dev =
 	    devm_iio_device_alloc(&pdev->dev, sizeof(struct sprd_pmic_adc));
 	if (!indio_dev) {
