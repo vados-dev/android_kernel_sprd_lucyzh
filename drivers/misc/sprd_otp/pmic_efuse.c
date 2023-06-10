@@ -340,7 +340,7 @@ static int sprd_pmic_efuse_probe(struct platform_device *pdev)
 	if (!pmic_efuse)
 		return -ENOMEM;
 
-	pmic_efuse->type = (enum sprd_pmic_efuse_type)of_id->data;
+	pmic_efuse->type = (enum sprd_pmic_efuse_type)(long)of_id->data;
 
 	pmic_efuse->regmap = dev_get_regmap(pdev->dev.parent, NULL);
 	if (!pmic_efuse->regmap) {

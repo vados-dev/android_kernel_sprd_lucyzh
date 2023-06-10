@@ -533,7 +533,7 @@ static int sprd_ap_efuse_probe(struct platform_device *pdev)
 	if (!ap_efuse)
 		return -ENOMEM;
 
-	ap_efuse->type = (enum sprd_public_efuse_type)of_id->data;
+	ap_efuse->type = (enum sprd_public_efuse_type)(long)of_id->data;
 
 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
 	efuse_base = devm_ioremap_resource(&pdev->dev, res);
