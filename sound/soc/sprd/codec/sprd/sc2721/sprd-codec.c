@@ -227,49 +227,15 @@ struct sprd_codec_mixer {
 };
 
 
-int xtlbuf1_eb_set(void)
-__attribute__ ((weak, alias("__xtlbuf1_eb_set")));
+int xtlbuf1_eb_set(void);
 
-int xtlbuf1_eb_clr(void)
-__attribute__ ((weak, alias("__xtlbuf1_eb_clr")));
+int xtlbuf1_eb_clr(void);
 
-static int __xtlbuf1_eb_set(void)
-{
-	pr_debug("%s not defined\n", __func__);
+uint32_t sprd_get_vbat_voltage(void);
 
-	return 0;
-}
+int agdsp_access_enable(void);
 
-static int __xtlbuf1_eb_clr(void)
-{
-	pr_debug("%s not defined\n", __func__);
-
-	return 0;
-}
-
-uint32_t sprd_get_vbat_voltage(void)
-	__attribute__ ((weak, alias("__sprd_get_vbat_voltage")));
-static uint32_t __sprd_get_vbat_voltage(void)
-{
-	pr_err("ERR: Can't get vbat!\n");
-	return 3800;
-}
-
-int agdsp_access_enable(void)
-	__attribute__ ((weak, alias("__agdsp_access_enable")));
-static int __agdsp_access_enable(void)
-{
-	pr_debug("%s\n", __func__);
-	return 0;
-}
-
-int agdsp_access_disable(void)
-	__attribute__ ((weak, alias("__agdsp_access_disable")));
-static int __agdsp_access_disable(void)
-{
-	pr_debug("%s\n", __func__);
-	return 0;
-}
+int agdsp_access_disable(void);
 
 struct sprd_codec_ldo_v_map {
 	int ldo_v_level;
