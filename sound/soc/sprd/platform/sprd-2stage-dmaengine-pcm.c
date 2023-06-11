@@ -2914,7 +2914,7 @@ static struct snd_pcm_ops sprd_pcm_ops = {
 };
 
 #ifdef CONFIG_ARM64
-static u64 sprd_pcm_dmamask = DMA_BIT_MASK(64);
+static u64 sprd_pcm_dmamask = DMA_BIT_MASK(64 - 1);
 #else
 static u64 sprd_pcm_dmamask = DMA_BIT_MASK(32);
 #endif
