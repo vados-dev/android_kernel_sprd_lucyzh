@@ -178,82 +178,26 @@ static struct dma_chan *dma_chan[DMA_CHAN_MAX] = { NULL };
 #define SPRD_SNDRV_PCM_FMTBIT (SNDRV_PCM_FMTBIT_S16_LE | \
 			       SNDRV_PCM_FMTBIT_S24_LE)
 
-int sprd_lightsleep_disable(const char *id, int disalbe)
-__attribute__ ((weak, alias("__sprd_lightsleep_disable")));
+int sprd_lightsleep_disable(const char *id, int disalbe);
 
 uint32_t audio_addr_ap2dsp(enum AUDIO_MEM_TYPE_E mem_type, uint32_t addr,
-			   bool invert)
-__attribute__ ((weak, alias("__audio_addr_ap2dsp")));
-static uint32_t __audio_addr_ap2dsp(enum AUDIO_MEM_TYPE_E mem_type,
-				    uint32_t addr, bool invert)
-{
-	pr_debug("%s\n", __func__);
-	return 0;
-}
+			   bool invert);
 
-uint32_t audio_mem_alloc(enum AUDIO_MEM_TYPE_E mem_type, uint32_t *size_inout)
-__attribute__ ((weak, alias("__audio_mem_alloc")));
-static uint32_t __audio_mem_alloc(enum AUDIO_MEM_TYPE_E mem_type,
-				  uint32_t *size_inout)
-{
-	pr_debug("%s\n", __func__);
-	return 0;
-}
+uint32_t audio_mem_alloc(enum AUDIO_MEM_TYPE_E mem_type, uint32_t *size_inout);
 
 uint32_t audio_mem_alloc_dsp(enum AUDIO_MEM_TYPE_E mem_type,
-			     uint32_t *size_inout)
-__attribute__ ((weak, alias("__audio_mem_alloc_dsp")));
-static uint32_t __audio_mem_alloc_dsp(enum AUDIO_MEM_TYPE_E mem_type,
-				      uint32_t *size_inout)
-{
-	pr_debug("%s\n", __func__);
-	return 0;
-
-}
+			     uint32_t *size_inout);
 
 void audio_mem_free(enum AUDIO_MEM_TYPE_E mem_type, uint32_t addr,
-		    uint32_t size)
-__attribute__ ((weak, alias("__audio_mem_free")));
-static void __audio_mem_free(enum AUDIO_MEM_TYPE_E mem_type, uint32_t addr,
-			     uint32_t size)
-{
-	pr_debug("%s\n", __func__);
-}
+		    uint32_t size);
 
-void *audio_mem_vmap(phys_addr_t start, size_t size, int noncached)
-__attribute__ ((weak, alias("__audio_mem_vmap")));
-static void *__audio_mem_vmap(phys_addr_t start, size_t size, int noncached)
-{
-	pr_debug("%s\n", __func__);
-	return 0;
-}
+void *audio_mem_vmap(phys_addr_t start, size_t size, int noncached);
 
-void audio_mem_unmap(const void *mem)
-__attribute__ ((weak, alias("__audio_mem_unmap")));
-static void __audio_mem_unmap(const void *mem)
-{
-	pr_debug("%s\n", __func__);
-}
+void audio_mem_unmap(const void *mem);
 
-void vbc_clock_set_force(void)
-__attribute__ ((weak, alias("__vbc_clock_set_force")));
-static void __vbc_clock_set_force(void)
-{
-	pr_info("no vbc_clock_set_force\n");
-}
+void vbc_clock_set_force(void);
 
-void vbc_clock_clear_force(void)
-__attribute__ ((weak, alias("__vbc_clock_clear_force")));
-static void __vbc_clock_clear_force(void)
-{
-	pr_info("no vbc_clock_clear_force\n");
-}
-
-static int __sprd_lightsleep_disable(const char *id, int disable)
-{
-	sp_asoc_pr_dbg("NO lightsleep control function %d\n", disable);
-	return 0;
-}
+void vbc_clock_clear_force(void);
 
 static void sprd_pcm_proc_init(struct snd_pcm_substream *substream);
 static void sprd_pcm_proc_done(struct snd_pcm_substream *substream);
