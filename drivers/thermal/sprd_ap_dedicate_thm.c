@@ -484,7 +484,7 @@ static int sprd_ap_thm_probe(struct platform_device *pdev)
 		dev_err(&pdev->dev, "get device of id failed!\n");
 		return -ENODEV;
 	}
-	thm_type = (enum sprd_ap_thm_type)of_id->data;
+	thm_type = (enum sprd_ap_thm_type)(long)of_id->data;
 	pr_info("ap thm probe start %d\n", thm_type);
 
 	sensor_id = of_alias_get_id(np, "thm-sensor");
