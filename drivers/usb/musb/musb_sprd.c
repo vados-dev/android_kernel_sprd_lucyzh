@@ -89,7 +89,7 @@ struct sprd_glue {
 
 static int boot_charging;
 
-static u64 sprd_device_dma_mask = DMA_BIT_MASK(BITS_PER_LONG);
+static u64 sprd_device_dma_mask = DMA_BIT_MASK(BITS_PER_LONG - 1);
 
 static inline struct musb *dev_to_musb_sprd(struct device *dev)
 {
