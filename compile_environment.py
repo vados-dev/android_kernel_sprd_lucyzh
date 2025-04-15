@@ -11,16 +11,15 @@ dict_project={
         #pike2
         'sp7731e_1h10_native-userdebug'         : { 'path' : 'sprd-board-config/pike2/sp7731e_1h10/', },
         'sp7731e_1h20_native-userdebug'         : { 'path' : 'sprd-board-config/pike2/sp7731e_1h20/', },
-
 	#sharkle
         'sp9832e_1h10_native-userdebug'		: { 'path' : 'sprd-board-config/sharkle/sp9832e_1h10/', },
-        'sp9832e_10c20_native-userdebug'		: { 'path' : 'sprd-board-config/sharkle/sp9832e_10c20/', },
+        'sp9832e_10c20_native-userdebug'	: { 'path' : 'sprd-board-config/sharkle/sp9832e_10c20/', },
         'sp9832e_1h10_gofu-userdebug'		: { 'path' : 'sprd-board-config/sharkle/sp9832e_1h10_go/', },
+        'sl8541e_cus_go-userdebug'              : { 'path' : 'sprd-board-config/sharkle/sl8541e_1h10_go/', },
 	#sharkl3
         's9863a1h10_Natv-userdebug'		: { 'path' : 'sprd-board-config/sharkl3/sp9863a_1h10/', },
         's9863a10c10_Natv-userdebug'		: { 'path' : 'sprd-board-config/sharkl3/sp9863a_10c10/', },
-        's9863a1h10_go32_Natv-userdebug'		: { 'path' : 'sprd-board-config/sharkl3/sp9863a_1h10_go32/', },
-
+        's9863a1h10_go32_Natv-userdebug'	: { 'path' : 'sprd-board-config/sharkl3/sp9863a_1h10_go32/', },
 }
 
 print_head="""
