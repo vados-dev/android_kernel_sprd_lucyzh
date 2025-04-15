@@ -1,0 +1,15 @@
+ifdef BUILD_FROM_KERNEL
+include sprd-board-config/sharkle/sl8541e_1h10_go/sl8541e_cus_go_base
+else
+include $(KERNEL_PATH)/sprd-board-config/sharkle/sl8541e_1h10_go/sl8541e_cus_go_base
+endif
+
+BOARD_TEE_CONFIG := trusty
+
+#DEFCONFIG
+KERNEL_DEFCONFIG := sl8541e_cus_go_defconfig
+
+#DTS
+#TARGET_DTB := sl8541e-cus-go-ll
+#TARGET_DTBO := sl8541e-cus-go-overlay
+
