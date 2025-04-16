@@ -1,8 +1,8 @@
-ifdef BUILD_FROM_KERNEL
-include sprd-board-config/sharkle/sl8541e_1h10_go/sl8541e_cus_go_base
-else
-include $(KERNEL_PATH)/sprd-board-config/sharkle/sl8541e_1h10_go/sl8541e_cus_go_base
-endif
+#ifdef BUILD_FROM_KERNEL
+#include sprd-board-config/sharkle/sl8541e_1h10_go/sl8541e_cus_go_base
+#else
+#include $(KERNEL_PATH)/sprd-board-config/sharkle/sl8541e_1h10_go/sl8541e_cus_go_base
+#endif
 
 BOARD_TEE_CONFIG := trusty
 
