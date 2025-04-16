@@ -83,7 +83,7 @@ def main():
     if (judge_parameters() == -1):
         return
     get_board_attribute()
-    os.system('make -f AndroidKernel.mk config')
+    os.system('make -f AndroidKernel.mk config || make -f AndroidKernel.mk')
 
 if __name__ == '__main__':
     main()
