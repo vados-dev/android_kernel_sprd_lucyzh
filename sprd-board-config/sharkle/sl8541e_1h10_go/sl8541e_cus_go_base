@@ -1,8 +1,8 @@
 TARGET_KERNEL_ARCH := arm
 
 ifdef BUILD_FROM_KERNEL
-KERNEL_OUT=out
-TARGET_ROOT_OUT=out
+KERNEL_OUT=.
+TARGET_ROOT_OUT=.
 KERNEL_DIFF_CONFIG_ARCH := sprd-diffconfig/sharkle/$(TARGET_KERNEL_ARCH)
 KERNEL_DIFF_CONFIG_COMMON := sprd-diffconfig/sharkle/common
 else
